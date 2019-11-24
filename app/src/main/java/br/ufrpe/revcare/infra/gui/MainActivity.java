@@ -14,7 +14,6 @@ import br.ufrpe.revcare.R;
 import br.ufrpe.revcare.usuario.gui.HomeUsuario;
 import br.ufrpe.revcare.profissional.gui.CadastroProfissional;
 import br.ufrpe.revcare.profissional.gui.HomeProfissional;
-import br.ufrpe.revcare.profissional.negocio.ProfissionalServices;
 import br.ufrpe.revcare.usuario.gui.CadastroUsuario;
 import br.ufrpe.revcare.usuario.negocio.UsuarioServices;
 
@@ -90,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void entrarProfissional(EditText campoEmail, EditText campoSenha) {
-        ProfissionalServices services = new ProfissionalServices(getBaseContext());
+        FilmeServices services = new FilmeServices(getBaseContext());
         Validacao validacao = new Validacao();
         if (validacao.isValido(campoEmail,campoSenha)){
             String email = campoEmail.getText().toString().trim();

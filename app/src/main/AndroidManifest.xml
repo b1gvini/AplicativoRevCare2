@@ -27,6 +27,7 @@
         <activity android:name=".profissional.gui.CadastroProfissional" />
         <activity android:name=".usuario.gui.CadastroUsuario" />
         <activity android:name=".usuario.gui.RecyclerViewUsuario" />
+        <activity android:name=".filme.gui.CadastroFilme" />
         <activity
             android:name=".infra.gui.SplashScreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

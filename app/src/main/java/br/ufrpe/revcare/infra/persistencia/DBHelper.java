@@ -6,8 +6,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "revtestt.bd";
-    private static final int DB_VERSION = 12;
+    private static final String DB_NAME = "v.bd";
+    private static final int DB_VERSION = 2;
     
     public static final String TABELA_USUARIO = "Tabela_Usuario";
     public static final String COL_ID_USUARIO = "id";
@@ -40,11 +40,16 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String COL_LIKE = "like";
     public static final String COL_DESLIKE = "deslike";
 
+    public static final String TABELA_FILME = "Tabela_Filme";
+    public static final String COL_ID_FILME = "id_filme";
+    public static final String COL_TITULO = "titulo";
+    public static final String COL_DESCRICAO = "descricao";
+
     private static final String SQL_CREATE_TABLE = "CREATE TABLE %1$s ";
     private static final String SQL_INTEGER_AUTOINCREMENT = "  %2$s INTEGER PRIMARY KEY AUTOINCREMENT, ";
     private static final String[] TABELAS = {
             TABELA_PROFISSIONAL, TABELA_USUARIO,
-            TABELA_AVALIACAO
+            TABELA_AVALIACAO, TABELA_FILME
     };
 
 
@@ -57,6 +62,7 @@ public class DBHelper extends SQLiteOpenHelper {
         createTableUsuario(db);
         createTableProfissional(db);
         createTableAvaliacao(db);
+        createTableFilme(db);
     }
 
     private void createTableUsuario(SQLiteDatabase db) {
@@ -115,6 +121,17 @@ public class DBHelper extends SQLiteOpenHelper {
                 TABELA_AVALIACAO, COL_ID_AVALIACAO, COL_FK_ID_USUARIO, COL_FK_ID_PROFISSIONAL,
                 TABELA_USUARIO, COL_ID_USUARIO, TABELA_PROFISSIONAL, COL_ID_PROFISSIONAL, COL_LIKE, COL_DESLIKE);
         db.execSQL(sqlTbAvaliacao);
+    }
+
+    private void createTableFilme(SQLiteDatabase db) {
+        String sqlTbFilme = SQL_CREATE_TABLE + "( " +
+                SQL_INTEGER_AUTOINCREMENT +
+                " %3$s TEXT NOT NULL, " +
+                " %4$s TEXT NOT NULL " +
+                ");";
+        sqlTbFilme = String.format(sqlTbFilme,
+                TABELA_FILME, COL_ID_FILME, COL_TITULO, COL_DESCRICAO);
+        db.execSQL(sqlTbFilme);
     }
 
     public void dropTables(SQLiteDatabase db) {

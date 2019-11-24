@@ -36,7 +36,7 @@ public class ProfissionalServices {
         }else{
             SessaoProfissional.profissionalLogado = profissional;
             SessaoProfissional.horaLogin = new Date();
-            }
+        }
     }
     public static void alteraFotoProfissional(Profissional profissional){
         ProfissionalDAO.alteraFotoProfissional(profissional);
