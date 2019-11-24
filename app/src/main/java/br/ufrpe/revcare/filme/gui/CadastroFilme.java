@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import br.ufrpe.revcare.R;
@@ -25,14 +26,13 @@ public class CadastroFilme extends AppCompatActivity implements AdapterView.OnIt
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_cadastro_profissional);
-        Button btnFinalizarCadastro = findViewById(R.id.botaoFinalizarCadastro);
+        setContentView(R.layout.activity_cadastro_filme);
+        ImageButton btnFinalizarCadastro = findViewById(R.id.imageButtonFinalizar);
         btnFinalizarCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
                     cadastrar();
-                    finish();
                 } catch (Exception e) {
                     e.printStackTrace();
                     Toast.makeText(getApplicationContext(),"Não foi possível cadastro.", Toast.LENGTH_LONG).show();
@@ -48,14 +48,14 @@ public class CadastroFilme extends AppCompatActivity implements AdapterView.OnIt
             Filme filme = criarFilme();
             FilmeServices services = new FilmeServices(getBaseContext());
             services.cadastrar(filme);
-            Toast.makeText(getApplicationContext(),"Profissional cadastrado com sucesso.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Filme cadastrado com sucesso.", Toast.LENGTH_LONG).show();
             startActivity(new Intent(CadastroFilme.this, MainActivity.class));
         }
     }
 
     private boolean validarCampos() {
-        vTitulo = findViewById(R.id.nomeTextField);
-        vDescricao = findViewById(R.id.cpfTextField);
+        vTitulo = findViewById(R.id.tituloTextField);
+        vDescricao = findViewById(R.id.descricaoTextField);
         Validacao valido = new Validacao();
         boolean camposValidos =
                 valido.isValido(vTitulo, vDescricao);
@@ -64,7 +64,7 @@ public class CadastroFilme extends AppCompatActivity implements AdapterView.OnIt
     private  boolean confirmaTitulo(){
         Filme result = null;
         FilmeServices services = new FilmeServices(this);
-        EditText nTitulo = findViewById(R.id.emailTextField);
+        EditText nTitulo = findViewById(R.id.tituloTextField);
         String titulo = nTitulo.getText().toString().trim();
         result = services.consultarTitulo(titulo);
         if (result != null){
@@ -75,10 +75,10 @@ public class CadastroFilme extends AppCompatActivity implements AdapterView.OnIt
         }
         return true;
     }
-    
+
     private Filme criarFilme() {
-        vTitulo = findViewById(R.id.nomeTextField);
-        vDescricao = findViewById(R.id.cpfTextField);
+        vTitulo = findViewById(R.id.tituloTextField);
+        vDescricao = findViewById(R.id.descricaoTextField);
 
         Filme result = new Filme();
         result.setTitulo(vTitulo.getText().toString().trim());

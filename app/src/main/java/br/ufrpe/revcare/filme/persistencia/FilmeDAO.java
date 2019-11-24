@@ -22,20 +22,17 @@ public class FilmeDAO {
         dbHelper = new DBHelper(context);
     }
 
-    public long cadastrar(Filme filme) {
+    public long cadastrar(Filme filme){
 
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(DBHelper.COL_ID_FILME, filme.getId());
-        values.put(COL_TITULO, filme.getTitulo());
+        values.put(DBHelper.COL_TITULO, filme.getTitulo());
         values.put(DBHelper.COL_DESCRICAO, filme.getDescricao());
-        db.insert(TABELA_FILME, null, values);
-        db.close();
         long id = db.insert(TABELA_FILME, null, values);
         db.close();
         return id;
-    }
 
+    }
     private Filme criarFilme(Cursor cursor) {
         Filme result = new Filme();
         result.setId(cursor.getInt(0));
@@ -45,14 +42,14 @@ public class FilmeDAO {
         return result;
     }
 
-    public Filme consultarTitulo(String email) {
+    public Filme consultarTitulo(String titulo) {
         Filme result = null;
         String query =
                 " SELECT * " +
                         " FROM " + TABELA_FILME +
                         " WHERE " + COL_TITULO + " = ? ";
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery(query, new String[]{email});
+        Cursor cursor = db.rawQuery(query, new String[]{titulo});
         if (cursor.moveToFirst()) {
             result = criarFilme(cursor);
         }

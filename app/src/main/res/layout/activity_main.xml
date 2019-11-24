@@ -44,6 +44,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <Button
+        android:id="@+id/botaoVini"
+        android:layout_width="213dp"
+        android:layout_height="75dp"
+        android:background="#800080"
+        android:text="b1gviNi Filmes!"
+        android:textColor="#FAF3F3"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="515dp" />
+
     <EditText
         android:id="@+id/caixatxtEmailLogin"
         android:layout_width="242dp"
@@ -110,13 +124,14 @@
 
     <Button
         android:id="@+id/esqueceuSenha"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="215dp"
         android:layout_height="43dp"
+        android:layout_marginTop="472dp"
         android:background="#fff"
-        android:layout_marginTop="496dp"
         android:text="Esqueceu sua senha?"
-        style="?android:attr/borderlessButtonStyle"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
