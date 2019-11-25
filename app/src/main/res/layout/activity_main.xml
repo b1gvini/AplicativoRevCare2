@@ -2,137 +2,123 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#fff"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     tools:context=".infra.gui.MainActivity">
 
     <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
-        android:layout_height="80dp"
+        android:layout_height="63dp"
         app:srcCompat="@drawable/logo"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="50dp" />
 
 
     <Button
         android:id="@+id/botaoEntrar"
         android:layout_width="213dp"
         android:layout_height="44dp"
-        android:layout_marginTop="340dp"
         android:background="#AF0D25"
         android:text="ENTRAR"
         android:textColor="#FAF3F3"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="340dp" />
+
 
     <Button
         android:id="@+id/botaoCadastro"
         android:layout_width="115dp"
         android:layout_height="43dp"
-        android:layout_marginTop="420dp"
         android:background="#AF0D25"
         android:shadowColor="#00719E7F"
         android:text="Cadastre-se"
         android:textColor="#FCF5F5F5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="605dp" />
 
     <Button
         android:id="@+id/botaoVini"
         android:layout_width="213dp"
-        android:layout_height="75dp"
+        android:layout_height="50dp"
         android:background="#800080"
         android:text="b1gviNi Filmes!"
         android:textColor="#FAF3F3"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="515dp" />
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="436dp" />
+
+    <Button
+        android:id="@+id/botaoViniExibir"
+        android:layout_width="213dp"
+        android:layout_height="30dp"
+        android:background="#800080"
+        android:text="Exibir Filmes"
+        android:textColor="#FAF3F3"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="519dp" />
 
     <EditText
         android:id="@+id/caixatxtEmailLogin"
         android:layout_width="242dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
         android:ems="10"
         android:hint="Digite seu E-mail"
         android:inputType="textEmailAddress"
         android:textColor="#0E0606"
-        app:layout_constraintEnd_toEndOf="@+id/caixatxtSenhaLogin"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/caixatxtSenhaLogin"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="160dp" />
 
     <EditText
         android:id="@+id/caixatxtSenhaLogin"
         android:layout_width="242dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="224dp"
         android:ems="10"
         android:hint="Digite sua senha"
         android:inputType="textPassword"
         android:textColor="#0A0303"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.568"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="224dp" />
 
     <Switch
         android:id="@+id/switchUsuarioProfissional"
         android:layout_width="124dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
         android:background="#00FFFFFF"
         android:text="Cliente"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.299"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="280dp" />
 
     <TextView
         android:id="@+id/lableEsqueceuSenha"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="396dp"
         android:text="Ainda não tem uma conta?"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="567dp" />
 
     <TextView
         android:id="@+id/labelProfissional"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
         android:text="Profissional"
         android:textColor="#0A0404"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.769"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="244dp"
+        tools:layout_editor_absoluteY="280dp" />
 
     <Button
         android:id="@+id/esqueceuSenha"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="215dp"
         android:layout_height="43dp"
-        android:layout_marginTop="472dp"
         android:background="#fff"
         android:text="Esqueceu sua senha?"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="109dp"
+        tools:layout_editor_absoluteY="672dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

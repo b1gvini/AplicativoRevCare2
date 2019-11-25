@@ -18,6 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".filme.gui.RecyclerViewAdapterFilme"></activity>
         <activity android:name=".infra.gui.MainActivity" />
         <activity android:name=".usuario.gui.PerfilProfissional" />
         <activity android:name=".avaliacao.gui.AvaliacaoProfissional" />
@@ -28,6 +29,7 @@
         <activity android:name=".usuario.gui.CadastroUsuario" />
         <activity android:name=".usuario.gui.RecyclerViewUsuario" />
         <activity android:name=".filme.gui.CadastroFilme" />
+        <activity android:name=".filme.gui.RecyclerViewFilme"/>
         <activity
             android:name=".infra.gui.SplashScreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

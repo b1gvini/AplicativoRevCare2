@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import br.ufrpe.revcare.R;
 import br.ufrpe.revcare.filme.gui.CadastroFilme;
+import br.ufrpe.revcare.filme.gui.RecyclerViewFilme;
 import br.ufrpe.revcare.profissional.dominio.Profissional;
 import br.ufrpe.revcare.profissional.negocio.ProfissionalServices;
 import br.ufrpe.revcare.usuario.gui.HomeUsuario;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnEsqueceuSenha = findViewById(R.id.esqueceuSenha);
         Button btnCadastrar = findViewById(R.id.botaoCadastro);
         Button btnVini = findViewById(R.id.botaoVini);
+        Button btnViniAll = findViewById(R.id.botaoViniExibir);
         final Switch switchUsuarioProfissional = findViewById(R.id.switchUsuarioProfissional);
         final EditText campoEmail = findViewById(R.id.caixatxtEmailLogin);
         final EditText campoSenha = findViewById(R.id.caixatxtSenhaLogin);
@@ -71,6 +73,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 finish();
                 startActivity(new Intent(MainActivity.this, CadastroFilme.class));
+            }
+
+        });
+        btnViniAll.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, RecyclerViewFilme.class));
             }
 
         });

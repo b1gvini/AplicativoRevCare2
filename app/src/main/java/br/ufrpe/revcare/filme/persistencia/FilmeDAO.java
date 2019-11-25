@@ -59,7 +59,7 @@ public class FilmeDAO {
         return result;
     }
 
-    public List<Filme> getAllProfissional() {
+    public List<Filme> getAllFilmes() {
         List<Filme> filmeArrayList = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         String query = " SELECT * " +
